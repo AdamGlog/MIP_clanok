@@ -9,7 +9,10 @@
 \usepackage{graphicx}
 \usepackage{url} % príkaz \url na formátovanie URL
 \usepackage{hyperref} % odkazy v texte budú aktívne (pri niektorých triedach dokumentov spôsobuje posun textu)
+
 \usepackage{todonotes}
+\usepackage{pdfpages}
+
 \usepackage{cite}
 %\usepackage{times}
 
@@ -33,7 +36,7 @@
 
 \begin{abstract}
 	Touto prácou by som chcel poukázať na to, ako Netflix ako firma spracúva užívateľské informácie. Kde tieto informácie posiela. Ako ich spracúva a ako podľa nich dokáže nám užívateľom spríjemniť fungovanie na platforme. Ak nám to zvyšuje zážitok z používania tejto platformy, čo to teda tú platformu stojí a či je to vo výsledku pre danú platformu efektívne a finančne prospešné. Taktiež sa pokúsim čo naviac priblížiť samotné spracovanie týchto údajov a poukážem na to, či je správne daným spôsobom spracúvať tieto informácie.\cite{amatriain2015recommender} Dôležítý taktiež pre platformu je, algoritmus akým spracúvajú dané informácie a infraštruktúra v ktorej to celé funguje. Samozrejme zistiť, či kvôli tomuto alogritmu a spôsobu spracovania informácií, neubližujú menej populárnemu obsahu, ktorý je teda ešte o to menej ukazovaný užívateľom. A tiež poukážem na to, či je tento menej populárny obsah iba nefavoritizovaný alebo je kompletne zahaľovaný určitým užívateľom.
-	\todo{142 slov}
+	\todo[color=blue!15]{Adam: 142 slov}
 \end{abstract}
 
 
@@ -49,6 +52,7 @@ Záverečné poznámky prináša časť~\ref{zaver}.
 
 \section{Toto je nová sekcia} \label{pouziva sa pre referencie}
 \input{novy.txt}
+\includepdf{diagram.pdf}
 
 \section{Nejaká časť} \label{nejaka}
 
