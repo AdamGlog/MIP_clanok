@@ -43,18 +43,38 @@ Touto prácou by som chcel poukázať na to, ako Netflix ako firma spracúva už
 	\includegraphics[scale=0.2]{diagram.pdf}
 \end{figure}
 Dôležítý taktiež pre platformu je, algoritmus akým spracúvajú dané informácie a samotná infraštruktúra v ktorej to celé funguje. Samozrejme touto prácou chcem zistiť, či kvôli tomuto alogritmu a spôsobu spracovania informácií, Netflix neubližuje menej populárnemu alebo menej ''mainstream'' obsahu, ktorý je teda ešte o to menej ukazovaný užívateľom. A tiež poukážem na to, či je tento menej populárny obsah iba nefavoritizovaný a posúvaný nižšie v hľadaní, alebo je kompletne zahaľovaný určitým užívateľom. Na konci tejto práce teda budete vedieť ako Netflix spracúva informácie, či je správne spracovávať užívateľské informácie týmto spôsobom, či je to profitabilné pre Netflix a taktiež, či to prospieva užívateľom tejto platformy.\todo{204 slov}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed scelerisque a metus in fermentum. Curabitur hendrerit velit vel tortor condimentum malesuada. Donec vel tincidunt ex. Suspendisse finibus tortor in arcu aliquam faucibus. Fusce consectetur gravida quam a tincidunt. Duis tempor, nisi id ultrices porta, lorem leo vestibulum lacus, eu sagittis ex erat quis justo. Mauris eu magna felis. Aenean vehicula quis enim eget maximus. Quisque pharetra id libero vitae tristique. Proin ut bibendum elit. Praesent at ligula vitae augue auctor gravida. Cras pretium mollis lacus quis sodales. Fusce interdum massa elementum, vulputate odio id, molestie nibh.
 
-Cras eu rutrum sem. Quisque pellentesque eget massa ac pellentesque. Nunc molestie pharetra dui eu aliquam. Vestibulum viverra, nulla nec eleifend ornare, nulla sapien scelerisque risus, quis auctor ligula purus tempor magna. Quisque imperdiet ex sed ultricies vulputate. Maecenas fermentum justo sed elementum pharetra. Vestibulum id ante elit. Mauris massa ipsum, fringilla quis consectetur blandit, cursus non massa. Sed pretium risus ut erat facilisis, non lacinia metus consectetur. Nulla aliquam metus luctus urna laoreet tincidunt. Aliquam luctus mattis ultrices. Maecenas tempus justo eu velit eleifend pellentesque eu mollis justo. Donec suscipit sapien erat, viverra placerat dui ultricies ut. Mauris eget velit a ex mollis faucibus in lobortis tellus.
-Quisque quis lorem ac nibh ornare consequat vitae quis lectus. Vestibulum nec lectus eget nisi eleifend pharetra. Proin interdum mi tempus, posuere nisl eu, finibus tellus. Aenean fermentum semper commodo. Aliquam at augue mi. Nulla eu metus nec felis mollis malesuada. Nunc ac elit sollicitudin, commodo sapien nec, maximus massa. Proin ut lectus vel eros lacinia porttitor. Aliquam et pharetra felis, a sagittis tortor.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed scelerisque a metus in fermentum. Curabitur hendrerit velit vel tortor condimentum malesuada. Donec vel tincidunt ex. Suspendisse finibus tortor in arcu aliquam faucibus. Fusce consectetur gravida quam a tincidunt. Duis tempor, nisi id ultrices porta, lorem leo vestibulum lacus, eu sagittis ex erat quis justo. Mauris eu magna felis. Aenean vehicula quis enim eget maximus. Quisque pharetra id libero vitae tristique. Proin ut bibendum elit. Praesent at ligula vitae augue auctor gravida. Cras pretium mollis lacus quis sodales. Fusce interdum massa elementum, vulputate odio id, molestie nibh.
 
-Cras eu rutrum sem. Quisque pellentesque eget massa ac pellentesque. Nunc molestie pharetra dui eu aliquam. Vestibulum viverra, nulla nec eleifend ornare, nulla sapien scelerisque risus, quis auctor ligula purus tempor magna. Quisque imperdiet ex sed ultricies vulputate. Maecenas fermentum justo sed elementum pharetra. Vestibulum id ante elit. Mauris massa ipsum, fringilla quis consectetur blandit, cursus non massa. Sed pretium risus ut erat facilisis, non lacinia metus consectetur. Nulla aliquam metus luctus urna laoreet tincidunt. Aliquam luctus mattis ultrices. Maecenas tempus justo eu velit eleifend pellentesque eu mollis justo. Donec suscipit sapien erat, viverra placerat dui ultricies ut. Mauris eget velit a ex mollis faucibus in lobortis tellus.
+\section{Krátka história} \label{Netflix prize} %kickstart / nakopnutie inak recommendation systemov %pozriet preklad netflix prize %preklad a vyznam RMSE
+Už v roku 2006 mal Netflix záujem o odporúčacie systémy.\cite{amatriain2015recommender} Preto, oznámil Cenu Netflixu ako súťaž strojového učenia o to, kto vytvorí aspoň o 10\% lepší odporúčací systém ako bol ten ich, Cinematech. Nový odporúčací systém mal byť lepší v konkrétne root mean squared error RMSE (nedá sa preložiť bez straty významu) pre predpokladané hodnotenie. A zrazu sa veľmi veľa rozdielnych týmov snažilo
 
-Quisque quis lorem ac nibh ornare consequat vitae quis lectus. Vestibulum nec lectus eget nisi eleifend pharetra. Proin interdum mi tempus, posuere nisl eu, finibus tellus. Aenean fermentum semper commodo. Aliquam at augue mi. Nulla eu metus nec felis mollis malesuada. Nunc ac elit sollicitudin, commodo sapien nec, maximus massa. Proin ut lectus vel eros lacinia porttitor. Aliquam et pharetra felis, a sagittis tortor.
+co v tom vidim ja ?
 
-%\begin{wrapfigure}{r}{0.5\textwidth}
+\section{Problem zlatej rybky} %kratka pozornost
+Ked ludia maju prilis vela veci na ktore sa mozu pozriet, nepozru sa na nic. Studia \cite{10.1145/2843948} zistila, že v priemere typický pouzivateľ stráca pozornosť po približne minúte prezerania si možností, čo si pozrie. No a teda sa Netflix veľmi usiluje aby počas tejto minúty ukázal užívateľovi čo najlepší výsledok.
 
-%\end{wrapfigure}
+\section{Algoritmus}
+dalsi Personalised video ranker
+dalsi +1 Top-N video ranker
+dalsi +2 Trending now
+dalsi +3 Continue watching
+dalsi +4 Video-Video similarity %BYW Because you watched
+dalsi +5 Page generation: Row selection and ranking
+
+\section{Profit}
+oplati sa im to vobec ? staci im revenue z predplatneho aby uzivili taky algoritmus
+to co oni musia zaplatit, nie ich revenue cena jednotlivych videii je pre nich rovnaka a teda im je jedno ktore video film alebo serial sa zobrazi a teda im ide hlavne o to aby sa zobrazili co najlepsie \cite{amatriain2015recommender}
+mozem spomenut ze napr oproti spotify ako spominal Timotej tak tam maju popularnejsie songy vacsiu value pre nich
+
+co v tom vidim ja ?
+
+\section{rozlozenie a riadky} %everything is a recommendation 
+Rozhoduje sa co dat do riadkov a to nielen pre jednu osobu ale treba si uvedomit ze netflix je zvacsa pouzivany v domacnostiach a teda do top 10 sa snazia davat veci ktore si uzije napr otec, mama a dalsi clenovia rodiny. Tak isto sa snazi najst polozku pre celu rodinu. Ak je rodina jednoclenna, tak sa snazi najst vyber z rozdielnych nalad a zalub cloveka.\cite{amatriain2015recommender}
+Netflix chce aby sme vedeli ako sa ich system adaptuje nasej chuti. To som si ale ja sam nevsimol. A tak isto sa snazi vybudovat doveru v tieto odporucania a tiez sa snazi vysvetlit preco by sme si to chceli pozriet. Toto reprezentuje popisok k danemu filmu/serialu, tak isto to ukazuje predikciu hodnotenia ake by sme dali danemu filmu/sierialu a tiez ci sa si nejaky z nasich priatelov pozrel dany film.
+Prepajania priatelov pomocou facebooku nepovinne ale zvlastne pricom chapem preco to je.
+
+co v tom vidim ja ?
+
 
 
 \begin{figure}
