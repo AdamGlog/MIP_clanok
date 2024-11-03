@@ -35,31 +35,38 @@
 \begin{document}
 
 \maketitle
+\begin{abstract}
 
-\section*{Abstract}
-Touto prácou by som chcel poukázať na to, ako Netflix ako firma spracúva užívateľské informácie a či je to správne. Na začiatku tejto práce objasním problematiku všeobecných odporúčacích systémov. Potom ukážem kde Netflix posiela užívateľské informácie. Ako ich spracúva a ako podľa nich dokáže nám užívateľom spríjemniť fungovanie na platforme. Ak nám to zvyšuje zážitok z používania tejto platformy, čo to teda tú platformu stojí a či je to vo výsledku pre danú platformu efektívne a finančne prospešné. Taktiež sa pokúsim čo naviac priblížiť samotné spracovanie týchto údajov a poukážem na to, či je správne daným spôsobom spracúvať tieto informácie.\cite{amatriain2015recommender}
-\begin{figure}[h]
-	\centering
-	\includegraphics[scale=0.2]{diagram.pdf}
-\end{figure}
-Dôležítý taktiež pre platformu je, algoritmus akým spracúvajú dané informácie a samotná infraštruktúra v ktorej to celé funguje. Samozrejme touto prácou chcem zistiť, či kvôli tomuto alogritmu a spôsobu spracovania informácií, Netflix neubližuje menej populárnemu alebo menej ''mainstream'' obsahu, ktorý je teda ešte o to menej ukazovaný užívateľom. A tiež poukážem na to, či je tento menej populárny obsah iba nefavoritizovaný a posúvaný nižšie v hľadaní, alebo je kompletne zahaľovaný určitým užívateľom. Na konci tejto práce teda budete vedieť ako Netflix spracúva informácie, či je správne spracovávať užívateľské informácie týmto spôsobom, či je to profitabilné pre Netflix a taktiež, či to prospieva užívateľom tejto platformy.\todo{204 slov}
 
+	Touto prácou by som chcel poukázať na to, ako Netflix ako firma spracúva užívateľské informácie a či je to správne. Na začiatku tejto práce objasním problematiku všeobecných odporúčacích systémov. Potom ukážem kde Netflix posiela užívateľské informácie. Ako ich spracúva a ako podľa nich dokáže nám užívateľom spríjemniť fungovanie na platforme. Ak nám to zvyšuje zážitok z používania tejto platformy, čo to teda tú platformu stojí a či je to vo výsledku pre danú platformu efektívne a finančne prospešné. Taktiež sa pokúsim čo naviac priblížiť samotné spracovanie týchto údajov a poukážem na to, či je správne daným spôsobom spracúvať tieto informácie.\cite{amatriain2015recommender}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[scale=0.2]{diagram.pdf}
+	\end{figure}
+	Dôležítý taktiež pre platformu je, algoritmus akým spracúvajú dané informácie a samotná infraštruktúra v ktorej to celé funguje. Samozrejme touto prácou chcem zistiť, či kvôli tomuto alogritmu a spôsobu spracovania informácií, Netflix neubližuje menej populárnemu alebo menej ''mainstream'' obsahu, ktorý je teda ešte o to menej ukazovaný užívateľom. A tiež poukážem na to, či je tento menej populárny obsah iba nefavoritizovaný a posúvaný nižšie v hľadaní, alebo je kompletne zahaľovaný určitým užívateľom. Na konci tejto práce teda budete vedieť ako Netflix spracúva informácie, či je správne spracovávať užívateľské informácie týmto spôsobom, či je to profitabilné pre Netflix a taktiež, či to prospieva užívateľom tejto platformy.\end{abstract}
+
+\section{Úvod}
 
 \section{Krátka história} \label{Netflix prize} %kickstart / nakopnutie inak recommendation systemov %pozriet preklad netflix prize %preklad a vyznam RMSE
-Už v roku 2006 mal Netflix záujem o odporúčacie systémy.\cite{amatriain2015recommender} Preto, oznámil Cenu Netflixu ako súťaž strojového učenia o to, kto vytvorí aspoň o 10\% lepší odporúčací systém ako bol ten ich, Cinematech. Nový odporúčací systém mal byť lepší v konkrétne root mean squared error RMSE (nedá sa preložiť bez straty významu) pre predpokladané hodnotenie. A zrazu sa veľmi veľa rozdielnych týmov snažilo
+Už v roku 2006 mal Netflix záujem o odporúčacie systémy.\cite{amatriain2015recommender} Preto, oznámil Cenu Netflixu ako súťaž strojového učenia o to, kto vytvorí aspoň o 10\% lepší odporúčací systém ako bol ten ich, Cinematech. Nový odporúčací systém mal byť lepší v konkrétne \textit{RMSE(root mean squared error)}\footnote{RMSE - root mean squared error - odmocnina priemerného rozdielu medzi reálnymi a očakávanými hodnotami\cite{EncyclopaediaBritannica}} pre predpokladané hodnotenie. A zrazu sa veľmi veľa rozdielnych firiem snažilo zlepšiť svoje algoritmy.
 
 co v tom vidim ja ?
 
 \section{Problem zlatej rybky} %kratka pozornost
-Ked ludia maju prilis vela veci na ktore sa mozu pozriet, nepozru sa na nic. Studia \cite{10.1145/2843948} zistila, že v priemere typický pouzivateľ stráca pozornosť po približne minúte prezerania si možností, čo si pozrie. No a teda sa Netflix veľmi usiluje aby počas tejto minúty ukázal užívateľovi čo najlepší výsledok.
+Keď majú ľudia príliš veľa vecí, na ktoré sa môžu pozrieť, nepozrú sa na nič. Štúdia \cite{10.1145/2843948} zistila, že v priemere typický používateľ stráca pozornosť po pribižne minúte prezerania si možností, čo si pozrie. No a teda sa Netflix veľmi usiluje aby počas tejto minúty, ukázal užívateľovi čo najlepší výsledok.
 
 \section{Algoritmus}
-dalsi Personalised video ranker
-dalsi +1 Top-N video ranker
-dalsi +2 Trending now
-dalsi +3 Continue watching
-dalsi +4 Video-Video similarity %BYW Because you watched
-dalsi +5 Page generation: Row selection and ranking
+Aké všetky algoritmy používa Netflix na svojej stránke ? \cite{10.1145/2843948}
+\subsection{Prispôsobený hodnotič videí}
+PNR
+\subsection{Top-N hodnotič videí}
+Top-N video ranker
+\subsection{Teraz populárne}
+Trending now
+\subsection{Pokračujte v pozeraní}
+Continue watching a Because you watched
+\subsection{Tvorba riadkov stránky}
+Page generation: Row selection and ranking
 
 \section{Profit}
 oplati sa im to vobec ? staci im revenue z predplatneho aby uzivili taky algoritmus
