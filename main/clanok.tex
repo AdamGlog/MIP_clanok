@@ -45,9 +45,9 @@ Zaujímalo vás niekedy, ako Netflix určuje, čo by sa vám pravdepodobne páč
 \newpage
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.2]{UvodnyDiagram.pdf}
+	\includegraphics[scale=0.4]{UvodnyDiagram.pdf}
 \end{figure}
-\section{Krátka história} \label{Netflix cena} %kickstart / nakopnutie inak recommendation systemov %pozriet preklad netflix prize %preklad a vyznam RMSE
+\section{Krátka história} \label{Netflix cena} %viac o minulosti a o netflix prize
 Už v roku 2006 mal Netflix záujem o odporúčacie systémy.\cite{amatriain2015recommender} Preto, oznámil Cenu Netflixu ako súťaž strojového učenia o to, kto vytvorí aspoň o 10\% lepší odporúčací systém ako bol ten ich, Cinematech. Nový odporúčací systém mal byť lepší v konkrétne \textit{RMSE(root mean squared error)}\footnote{RMSE - root mean squared error - odmocnina priemerného rozdielu medzi reálnymi a očakávanými hodnotami\cite{EncyclopaediaBritannica}} pre predpokladané hodnotenie. A zrazu sa veľmi veľa rozdielnych firiem snažilo zlepšiť svoje algoritmy.
 %uz za tyzden ich prekonali, treba najst zdroj
 
@@ -71,6 +71,7 @@ Keďže je veľmi dôležité ukladať pokrok pozerania seriálov alebo filmov n
 
 Keďže 80\% sledovania na platforme tvorí sledovanie odporúčaného obsahu práve predtým spomenutými algoritmami, tak to znamená, že fungujú veľmi dobre a, že sa im vyplatia \cite{pub.1158091188}. V podstate bez ohľadu na to, koľko by ich to stálo, vyplatí sa im udržiavať a vyvíjať tieto algoritmy. Keďže za prehrávanie určitého obsahu, či už populárneho a dobre hodnoteného alebo nepopulárneho a menej dobre hodnoteného, platí Netflix prakticky tú istú sumu a teda im je to v podstate jedno, čo užívateľovi zobrazí, jediné na čom záleží je, že si to užívateľ pozrie, je spokojný a príde na platformu znova. \cite{amatriain2015recommender}
 Pre jednoduché porovnanie odporúčacieho systému Netflixu s napr. Spotify odporúčacím systémom. Môžme vidieť veľmi veľký problém v tom, že Spotify uprednostňuje populárnu hudbu a obsah oproti tomu menej populárnemu , pretože z toho má vačší profit a teda je stavaný aj ich odporúčací systém okolo profitu\cite{10425661}. Keďže každá firma chce mať profit, je to v relatívne v poriadku, ale problém je, že potom sú utláčaní nepopulárny umelci a majú ťažšie vytvoriť zisk. Na rozdiel od Spotify, Netflix profituje za všetok obsah rovnako, je menej podstatné uprednostňovať populárny obsah. O tom, že Netflix je na tom finančne veľmi dobre a raste aj nadalej oproti minulým rokom, hovorí aj ich výročná správa o profite\cite{AnnualReportNetflix2023}. Tento profit sa odvíja aj na hodnote ich akcie, tá bola v 01. novembra 2023 iba 420,19\$ ale tohto roka v ten istý dátum sa vyšplhala na neuveriteľných 756,10\$ za akciu. To je zvýšenie o takmer 80\% za jeden rok.\cite{StockValueNetflix}
+%tabulka profitu potom porovnanie 2022 a 2023
 
 \section{Rozloženie hlavnej stránky} \label{Rozloženie}
 Keďže už sme si popísali ako fungujú algoritmy, teraz si môžme popísať ako personalizovaný obsah rozkladá na stránku. Ako už predtým bolo spomenuté, užívateľ má krátku dobu pozornosti a Netflix preto rozdeľuje tento obsah do riadkov hneď na hlavnú stránku. Treba si ale uvedomiť že Netflix je zväčša používaný v domácnostiach a teda do napr. top 10 sa snaží dávať obsah ktorý si užije napr. otec, mama a ďalší členovia rodiny. Tak isto sa snaží nájsť položku pre celú rodinu. Ak je rodina jednočlenná, tak sa snaží nájsť výber z rozdielnych nálad a záľub daného užívateľa ktoré zisťujú dané algoritmy.\cite{amatriain2015recommender}

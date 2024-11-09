@@ -1,0 +1,233 @@
+% Valentino Vranic
+% Metody inzinierskej prace 2012/13
+
+\documentclass{beamer}
+
+\usetheme{Warsaw}
+
+\usecolortheme{orchid}
+
+\setbeamercovered{transparent}
+
+\usepackage[slovak]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{url}
+
+\usepackage{listings}
+
+% \lstset{language=C++,basicstyle=\fontsize{8}{9.6}\selectfont,showstringspaces=false,columns=fullflexible,identifierstyle=\ttfamily,keywordstyle=\bfseries,showstringspaces=false,columns=fullflexible}
+%\lstset{language=C,basicstyle=\fontsize{10.5}{12.6}\selectfont,identifierstyle=\ttfamily,keywordstyle=\bfseries,showstringspaces=false,columns=fixed}
+
+\def\BibTeX{\textsc{Bib}\kern-.08em\TeX} 
+
+\newcommand{\footcite}[1]{\footnote{\tiny #1}}
+\newcommand{\umlet}{.5}
+\newcommand{\emp}[1]{\textit{\alert{#1}}}
+\newcommand{\kw}[1]{\mbox{\textbf{#1}}}
+\newcommand{\id}[1]{\texttt{#1}}
+\newcommand{\stl}{\guillemotleft}
+\newcommand{\str}{\guillemotright}
+
+\newcommand{\lsti}{\lstinline[basicstyle=\fontsize{10.5}{12.1}\selectfont]}
+
+\newcommand{\ssection}[1]{
+	\section{#1}
+	\begin{frame}[fragile=singleslide]\frametitle{}
+	\Huge #1
+	\end{frame}
+}
+
+\newcommand{\ssectionn}[1]{
+	\section*{#1}
+	\begin{frame}[fragile=singleslide]\frametitle{}
+	\Huge #1
+	\end{frame}
+}
+
+\newenvironment{program}{\begin{beamercolorbox}[rounded=true,shadow=true]{block body}\vspace{-4mm}}{\vspace{-2mm}\end{beamercolorbox}}
+
+\setbeamercolor{fvystup}{fg=white,bg=black}
+\newenvironment{vystup}{\begin{beamercolorbox}[rounded=true,shadow=true]{fvystup}}{\end{beamercolorbox}}
+
+\newenvironment{poznamka}{\begin{beamercolorbox}[rounded=true,shadow=false]{block body}}{\end{beamercolorbox}}
+
+\setbeamertemplate{footline}[page number]
+{
+%\insertpagenumber
+%\begin{beamercolorbox}{section in head/foot}
+%\vskip2pt\insertnavigation{\paperwidth}\vskip2pt
+%\end{beamercolorbox}%
+}
+
+
+
+\author{Adam Glogovský}
+%\url{www.fiit.stuba.sk/~vranic}, \url{vranic@fiit.stuba.sk}}
+%{\tiny \url{www.fiit.stuba.sk/~vranic}, \url{vranic@fiit.stuba.sk}}
+\institute{
+	Fakulta informatiky a informačných technológií\\
+	Slovenská technická univerzita v Bratislave}
+
+\subtitle{\vspace{3mm} Metódy inžinierskej práce 2024/2025}
+
+\title{Je odporúčací systém Netflix-u problém?
+}
+
+\date{\footnotesize 12. november 2024}
+
+
+
+
+\begin{document}
+
+\begin{frame}[fragile=singleslide]
+    \titlepage
+\end{frame}
+
+\begin{frame}[fragile=singleslide]\frametitle{Obsah}
+    \includegraphics[scale=.35]{UvodnyDiagram.pdf}
+    % pridajte vlastný obrázok a zrušte znák % pred príkazom \includegraphics vo formáte PDF prípadne PNG alebo JPG
+    % scale určuje veľkosť obrázku
+\end{frame}
+
+% \begin{frame}[fragile=singleslide]\frametitle{Obsah}
+%     \tableofcontents
+% \end{frame}
+
+
+\section{Krátka história}
+
+\begin{frame}[fragile=singleslide]\frametitle{Cena Netflixu}
+    \begin{itemize}
+        \item 2009 cena Netflixu
+              %tu pridat medzeru
+        \item Snaha o zlepšenie Cinematech o 10\% v RMSE\footcite{RMSE - root mean squared error - odmocnina priemerného rozdielu medzi reálnymi a očakávanými hodnotami}
+
+        \item Už o týždeň istá firma prišla na zlepšenie
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile=singleslide]\frametitle{Cena Netflixu}
+
+    \includegraphics[scale=.13]{NetflixPrize.png}
+    {\tiny https://www.wired.com/2009/09/bellkors-pragmatic-chaos-wins-1-million-netflix-prize/}
+
+    {\tiny }
+\end{frame}
+
+
+\section{Problém akváriovej rybky}
+
+\begin{frame}[fragile=singleslide]\frametitle{Problém akváriovej rybky}
+    Netflix zistil, že ľudia strácajú pozornosť už po minúte prezerania si hlavnej stránky. Týmto sa dozvedeli, že ich úspech stojí a padá na dobrom odporúčacom algoritme.
+\end{frame}
+
+\section{Algoritmus}
+
+\begin{frame}[fragile=singleslide]\frametitle{Algoritmus}
+    Netflix teda po rokoch prišiel na to, že im nestačí len jeden algoritmus, a tak vytvoril celý set alogritmov ktoré riešia veľmi podobné, ale ajtak odlišné problémy.
+\end{frame}
+
+\begin{frame}[fragile=singleslide]\frametitle{Prispôsobený hodnotič videí}
+    A teda rozdelili jednotlivé algoritmy, do užívateľsky priateľských riadkov kde zoskupili výstup každého algoritmu.
+\end{frame}
+
+\begin{frame}[fragile=singleslide]\frametitle{Top-n hodnotič videí}
+    Netflix zistil, že ľudia strácajú pozornosť už po minúte prezerania si hlavnej stránky. Týmto sa dozvedeli, že ich úspech stojí a padá na dobrom odporúčacom algoritme.
+\end{frame}
+
+
+%no a teraz ked uz chapeme ako funguje tento algoritus tak si mozme povedat nieco o jeho dopade
+\section{Profitabilnosť}
+
+\begin{frame}[fragile=singleslide]\frametitle{Profit Netflixu}
+
+
+    \begin{center}
+        Peňažná bilancia zisku Netflixu:
+        \vspace{0.2cm}
+
+        \begin{tabular}{||c c||}
+            \hline
+            Dátum      & Čistý zisk \\ [0.5ex]
+            \hline\hline
+            31.12.2020 & 7,57 Mld   \\
+            \hline
+            31.12.2021 & 12,69 Mld  \\
+            \hline
+            31.12.2022 & 17,18 Mld  \\
+            \hline
+            31.12.2023 & 22,59 Mld  \\
+            \hline
+        \end{tabular}
+        \footcite{https://ir.netflix.net/financials/annual-reports-and-proxies/default.aspx}
+
+        \vspace{0.4cm}
+        Enormný rozdiel hodnoty akcie Netflixu:
+
+        \begin{tabular}{|c c|}
+            \hline
+            Dátum      & Hodnota    \\ [0.5ex]
+            \hline\hline
+            01.11.2023 & 420,19  \$ \\
+            \hline
+            01.11.2024 & 756,10 \$  \\
+            \hline
+        \end{tabular}
+        \footcite{https://ir.netflix.net/stock-information/stock-chart/default.aspx}
+    \end{center}
+\end{frame}
+
+
+\section{Rozloženie hlavnej stránky}
+
+\begin{frame}[fragile=singleslide]\frametitle{Rozloženie hlavnej stránky}
+
+    \includegraphics[scale=.26]{NetflixMainPage1.png}
+
+    {\tiny Hlavná stránka}
+
+
+\end{frame}
+
+\begin{frame}[fragile=singleslide]\frametitle{Jednotlivé riadky}
+
+    \includegraphics[scale=.26]{NetflixMainPage2.png}
+
+    {\tiny Rozdielne algoritmy pre každý riadok}
+
+
+\end{frame}
+
+
+
+
+
+
+
+
+
+\section*{Zhodnotenie}
+% hviezdička zabezpečí, aby sa táto časť neocitla v prehľade prezentácie - každá prezentácia má zhodnotenie a prehľad by sa tým zbytočne zahlcoval
+\begin{frame}[fragile=singleslide]\frametitle{Zhodnotenie}
+
+    Takže je teda odporúčací systém Netflix-u problém? - Nie.
+
+
+\end{frame}
+
+\end{document}
+
+
+
+\begin{frame}[fragile=singleslide]\frametitle{Ďalší slajd}
+    \begin{itemize}
+        \item Nejaký text
+        \item Ďalší text -- \emph{zvýraznený text}
+        \item \emp{Kľúčová poznámka} % príkaz definovaný v preambule
+
+              % odrážka s odkazom na zdroj:
+        \item Bol použitý balík beamer\footcite{\url{https://tug.ctan.org/macros/latex/contrib/beamer/doc/beameruserguide.pdf}}
+    \end{itemize}
+\end{frame}
