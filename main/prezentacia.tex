@@ -1,5 +1,5 @@
-% Valentino Vranic
-% Metody inzinierskej prace 2012/13
+% Adam Glogovsky
+% Metody inzinierskej prace 2024/25
 
 \documentclass{beamer}
 
@@ -16,8 +16,6 @@
 
 \usepackage{listings}
 
-% \lstset{language=C++,basicstyle=\fontsize{8}{9.6}\selectfont,showstringspaces=false,columns=fullflexible,identifierstyle=\ttfamily,keywordstyle=\bfseries,showstringspaces=false,columns=fullflexible}
-%\lstset{language=C,basicstyle=\fontsize{10.5}{12.6}\selectfont,identifierstyle=\ttfamily,keywordstyle=\bfseries,showstringspaces=false,columns=fixed}
 
 \def\BibTeX{\textsc{Bib}\kern-.08em\TeX} 
 
@@ -54,17 +52,11 @@
 
 \setbeamertemplate{footline}[page number]
 {
-%\insertpagenumber
-%\begin{beamercolorbox}{section in head/foot}
-%\vskip2pt\insertnavigation{\paperwidth}\vskip2pt
-%\end{beamercolorbox}%
 }
 
 
 
 \author{Adam Glogovský}
-%\url{www.fiit.stuba.sk/~vranic}, \url{vranic@fiit.stuba.sk}}
-%{\tiny \url{www.fiit.stuba.sk/~vranic}, \url{vranic@fiit.stuba.sk}}
 \institute{
 	Fakulta informatiky a informačných technológií\\
 	Slovenská technická univerzita v Bratislave}
@@ -85,26 +77,21 @@
     \titlepage
 \end{frame}
 
-\begin{frame}[fragile=singleslide]\frametitle{Obsah}
-    \includegraphics[scale=.35]{UvodnyDiagram.pdf}
-    % pridajte vlastný obrázok a zrušte znák % pred príkazom \includegraphics vo formáte PDF prípadne PNG alebo JPG
-    % scale určuje veľkosť obrázku
-\end{frame}
 
-% \begin{frame}[fragile=singleslide]\frametitle{Obsah}
-%     \tableofcontents
-% \end{frame}
+\begin{frame}[fragile=singleslide]\frametitle{Obsah}
+    \tableofcontents
+\end{frame}
 
 
 \section{Krátka história}
 
 \begin{frame}[fragile=singleslide]\frametitle{Cena Netflixu}
+    Keďže Netflix chcel zlepšiť svôj odporúčací algoritmus, vyhlásil súťaž.
     \begin{itemize}
-        \item 2009 cena Netflixu
-              %tu pridat medzeru
-        \item Snaha o zlepšenie Cinematech o 10\% v RMSE\footcite{RMSE - root mean squared error - odmocnina priemerného rozdielu medzi reálnymi a očakávanými hodnotami}
+        \item začala sa v 2009
+        \item Snaha o zlepšenie RMSE\footcite{RMSE - root mean squared error - odmocnina priemeru rozdielu medzi reálnymi a očakávanými hodnotami} o 10\%
 
-        \item Už o týždeň istá firma prišla na zlepšenie
+        \item Už o týždeň tým Bellkor's Pragmatic Chaos prišiel na stanovené zlepšenie
     \end{itemize}
 \end{frame}
 
@@ -120,64 +107,48 @@
 \section{Problém akváriovej rybky}
 
 \begin{frame}[fragile=singleslide]\frametitle{Problém akváriovej rybky}
-    Netflix zistil, že ľudia strácajú pozornosť už po minúte prezerania si hlavnej stránky. Týmto sa dozvedeli, že ich úspech stojí a padá na dobrom odporúčacom algoritme.
+    Podľa údajov z Netflixu, ľudia strácajú pozornosť už \textbf{po minúte prezerania si hlavnej stránky.} Týmto sa dozvedeli, že ich úspech stojí a padá na dobrom odporúčacom algoritme.
 \end{frame}
 
 \section{Algoritmus}
 
 \begin{frame}[fragile=singleslide]\frametitle{Algoritmus}
-    Netflix teda po rokoch prišiel na to, že im nestačí len jeden algoritmus, a tak vytvoril celý set alogritmov ktoré riešia veľmi podobné, ale ajtak odlišné problémy.
+
+    A tak vytvorili celý set alogritmov ktoré riešia veľmi podobné, ale ajtak odlišné problémy.
+    \begin{center}
+        \includegraphics[scale=.3]{DiagramAlgoritmus.png}
+    \end{center}
+
+
+\end{frame}
+
+\begin{frame}[fragile=singleslide]\frametitle{Teraz populárne}
+    Je veľmi jednoduchý algoritmus:
+    \begin{itemize}
+        \item Používaný hlavne na začiatku.
+        \item Poukazuje na meniace sa trendy.
+        \item Je tam aj troška personalizácie.
+    \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile=singleslide]\frametitle{Prispôsobený hodnotič videí}
-    A teda rozdelili jednotlivé algoritmy, do užívateľsky priateľských riadkov kde zoskupili výstup každého algoritmu.
+    Najpoužívanejší algoritmus je práve tento. A to pretože:
+    \begin{itemize}
+        \item Zoradzuje celý katalóg filmov / seriálov pre každý používateľský profil personalizovane.
+        \item Jeho cieľ je byť personalizovaný a teda každý by mal dostať to, čo chce.
+        \item Jednoducho sa dá upraviť a použiť na iný riadok.
+    \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile=singleslide]\frametitle{Top-n hodnotič videí}
-    Netflix zistil, že ľudia strácajú pozornosť už po minúte prezerania si hlavnej stránky. Týmto sa dozvedeli, že ich úspech stojí a padá na dobrom odporúčacom algoritme.
+    Je algoritmus podobný Prispôsobenému hodnotiču videí, s pár rozdielmi:
+    \begin{itemize}
+        \item Prechádza len najvrchnejšou časťou katalógu filmov/seriálov.
+        \item Je personalizovaný, ale viac ho ovplyvňuje lokalita, čas roka a popularita.
+    \end{itemize}
 \end{frame}
 
 
-%no a teraz ked uz chapeme ako funguje tento algoritus tak si mozme povedat nieco o jeho dopade
-\section{Profitabilnosť}
-
-\begin{frame}[fragile=singleslide]\frametitle{Profit Netflixu}
-
-
-    \begin{center}
-        Peňažná bilancia zisku Netflixu:
-        \vspace{0.2cm}
-
-        \begin{tabular}{||c c||}
-            \hline
-            Dátum      & Čistý zisk \\ [0.5ex]
-            \hline\hline
-            31.12.2020 & 7,57 Mld   \\
-            \hline
-            31.12.2021 & 12,69 Mld  \\
-            \hline
-            31.12.2022 & 17,18 Mld  \\
-            \hline
-            31.12.2023 & 22,59 Mld  \\
-            \hline
-        \end{tabular}
-        \footcite{https://ir.netflix.net/financials/annual-reports-and-proxies/default.aspx}
-
-        \vspace{0.4cm}
-        Enormný rozdiel hodnoty akcie Netflixu:
-
-        \begin{tabular}{|c c|}
-            \hline
-            Dátum      & Hodnota    \\ [0.5ex]
-            \hline\hline
-            01.11.2023 & 420,19  \$ \\
-            \hline
-            01.11.2024 & 756,10 \$  \\
-            \hline
-        \end{tabular}
-        \footcite{https://ir.netflix.net/stock-information/stock-chart/default.aspx}
-    \end{center}
-\end{frame}
 
 
 \section{Rozloženie hlavnej stránky}
@@ -200,34 +171,58 @@
 
 \end{frame}
 
+%no a teraz ked uz chapeme ako funguje tento algoritus tak si mozme povedat nieco o jeho dopade
+\section{Profitabilnosť}
+
+\begin{frame}[fragile=singleslide]\frametitle{Profit Netflixu}
 
 
+    \begin{center}
+        Peňažná bilancia zisku Netflixu:
+        \vspace{0.2cm}
 
+        \begin{tabular}{||c | c||}
+            \hline
+            Dátum      & Čistý zisk   \\ [0.5ex]
+            \hline\hline
+            31.12.2020 & 7,57 Mld \$  \\
+            \hline
+            31.12.2021 & 12,69 Mld \$ \\
+            \hline
+            31.12.2022 & 17,18 Mld \$ \\
+            \hline
+            31.12.2023 & 22,59 Mld \$ \\
+            \hline
+        \end{tabular}
+        \footcite{https://ir.netflix.net/financials/annual-reports-and-proxies/default.aspx}
 
+        \vspace{0.4cm}
+        Enormný rozdiel hodnoty akcie Netflixu:
 
-
+        \begin{tabular}{|c | c|}
+            \hline
+            Dátum      & Hodnota    \\ [0.5ex]
+            \hline\hline
+            01.11.2023 & 420,19  \$ \\
+            \hline
+            01.11.2024 & 756,10 \$  \\
+            \hline
+        \end{tabular}
+        \footcite{https://ir.netflix.net/stock-information/stock-chart/default.aspx}
+    \end{center}
+\end{frame}
 
 
 \section*{Zhodnotenie}
-% hviezdička zabezpečí, aby sa táto časť neocitla v prehľade prezentácie - každá prezentácia má zhodnotenie a prehľad by sa tým zbytočne zahlcoval
+
 \begin{frame}[fragile=singleslide]\frametitle{Zhodnotenie}
 
-    Takže je teda odporúčací systém Netflix-u problém? - Nie.
+    \textbf{Takže je teda odporúčací systém Netflix-u problém?.}
 
+    \vspace{1cm}
+    Ďakujem za pozornosť!
 
+    \textbf{Priestor pre vaše otázky O:D}
 \end{frame}
 
 \end{document}
-
-
-
-\begin{frame}[fragile=singleslide]\frametitle{Ďalší slajd}
-    \begin{itemize}
-        \item Nejaký text
-        \item Ďalší text -- \emph{zvýraznený text}
-        \item \emp{Kľúčová poznámka} % príkaz definovaný v preambule
-
-              % odrážka s odkazom na zdroj:
-        \item Bol použitý balík beamer\footcite{\url{https://tug.ctan.org/macros/latex/contrib/beamer/doc/beameruserguide.pdf}}
-    \end{itemize}
-\end{frame}
